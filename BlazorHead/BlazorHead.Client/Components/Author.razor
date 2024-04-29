@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Components.Sections
+<p><i>Author: @Name</i></p>
+
+<PageTitle>Software Wizardry - @Name</PageTitle>
+
+<SectionContent SectionName="HeadContent">
+    <meta name="author" content="@Name" />
+</SectionContent>
+
+@code {
+    [Parameter]
+    public int ArticleId { get; set; }
+
+    public string? Name { get; set; }
+
+    protected override void OnInitialized()
+    {
+        SetAuthorName();
+    }
+
+    protected override void OnParametersSet()
+    {
+        SetAuthorName();
+    }
+
+    private void SetAuthorName()
+    {
+        if (ArticleId == 16)
+        {
+            Name = "Claudio Bernasconi";
+        }
+        else
+        {
+            Name = "Unknown";
+        }
+    }
+}

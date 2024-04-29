@@ -1,0 +1,19 @@
+﻿@page "/article/{ArticleId:int}"
+@using BlazorHead.Client.Components
+@using Microsoft.AspNetCore.Components.Sections
+
+<PageTitle>Software Wizardry</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="Amazing Content in a blog post." />
+    <SectionOutlet SectionName="HeadContent" />
+</HeadContent>
+
+<h1>Amazing Blog Post Title</h1>
+<Author ArticleId=@ArticleId />
+<p>Amazing Content</p>
+
+@code {
+    [Parameter]
+    public int ArticleId { get; set; }
+}
